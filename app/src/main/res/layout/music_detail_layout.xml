@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cover_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:elevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="5dp">
+
+            <com.ironbear775.musichunter.SquareImageView
+                android:id="@+id/iv_album_art"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignParentStart="true" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cover_layout" />
+
+
+        <ImageView
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seek_bar"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:src="@drawable/play_to_pause_anim"
+            android:text="@string/play_song" />
+
+        <TextView
+            android:id="@+id/tv_song_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/play_button"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_song_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_song_title"
+            android:layout_margin="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ogg_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_song_detail"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mp3_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ogg_size"
+            android:layout_margin="15dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="10dp"
+        app:menu_fab_label="@string/download"
+        app:menu_fab_size="normal"
+        app:menu_icon="@drawable/download">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/album_art_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/album_art"
+            app:fab_label="@string/download_album_art"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/mp3_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hq_mp3"
+            app:fab_label="@string/mp3_download"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/mp3_low_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/low_mp3"
+            app:fab_label="@string/mp3_low_download"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/ogg_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ogg"
+            app:fab_label="@string/ogg_download"
+            app:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+</android.support.design.widget.CoordinatorLayout>
